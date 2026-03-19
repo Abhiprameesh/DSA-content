@@ -17,9 +17,8 @@ heap = []
 
 for i in range(n):
     heapq.heappush(heap, (-v[i], i))
-
+    
 answer = 0
-
 
 while m > 0 and heap:
     value, i = heapq.heappop(heap)
