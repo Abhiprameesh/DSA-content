@@ -1,46 +1,41 @@
-def max_mss_with_k_swaps(n, k, arr):
-    max_sum = float('-inf')
+def kadane(arr):
+    max_sum = arr[0]
+    current_sum = arr[0]
 
-    # Try all possible subarrays
-    for i in range(n):
-        current = []
-        
-        for j in range(i, n):
-            current.append(arr[j])
-
-            # Step 1: Sort inside subarray (ascending)
-            inside = sorted(current)
-
-            # Step 2: Elements outside subarray (descending)
-            outside = sorted(arr[:i] + arr[j+1:], reverse=True)
-
-            # Step 3: Perform at most k swaps
-            swaps = k
-            idx_in = 0
-            idx_out = 0
-
-            while swaps > 0 and idx_in < len(inside) and idx_out < len(outside):
-                if inside[idx_in] < outside[idx_out]:
-                    inside[idx_in], outside[idx_out] = outside[idx_out], inside[idx_in]
-                    swaps -= 1
-                    idx_in += 1
-                    idx_out += 1
-                else:
-                    break
-
-            # Step 4: Compute sum
-            current_sum = sum(inside)
-
-            # Step 5: Update max
-            max_sum = max(max_sum, current_sum)
+    for i in range(1, len(arr)):
+        current_sum = max(arr[i], current_sum + arr[i])
+        max_sum = max(max_sum, current_sum)
 
     return max_sum
 
 
-# -------- INPUT --------
+def max_mss_with_k_swaps(n, k, arr):
+    # Step 1: Sort array
+    sorted_arr = sorted(arr)
+
+    # Step 2: Try improving array using swaps
+    # Copy original array
+    improved = arr[:]
+
+    # Replace smallest values with largest ones
+    i = 0
+    j = n - 1
+
+    swaps = k
+    while swaps > 0 and i < j:
+        if improved[i] < improved[j]:
+            improved[i], improved[j] = improved[j], improved[i]
+            swaps -= 1
+        i += 1
+        j -= 1
+
+    # Step 3: Find MSS
+    return kadane(improved)
+
+
+# Input
 n = int(input())
 k = int(input())
 arr = [int(input()) for _ in range(n)]
 
-# -------- OUTPUT --------
 print(max_mss_with_k_swaps(n, k, arr))
