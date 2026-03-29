@@ -32,7 +32,6 @@ def max_mss_with_k_swaps(n, k, arr):
     # Step 3: Find MSS
     return kadane(improved)
 
-
 # Input
 n = int(input())
 k = int(input())
