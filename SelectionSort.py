@@ -1,5 +1,4 @@
 def selection_sort(arr):
-
     n = len(arr)
     for i in range(n):
         # Find the minimum element in remaining unsorted array
@@ -17,3 +16,15 @@ if __name__ == "__main__":
     print("Original array:", test_array)
     sorted_array = selection_sort(test_array)
     print("Sorted array:", sorted_array)
+    
+    """
+    Sorts the given array using selection sort algorithm.
+    Selection sort works by repeatedly finding the minimum element
+    from the unsorted portion and swapping it with the first unsorted element.
+    
+    Time Complexity: O(n^2)
+    Space Complexity: O(1)
+    
+    :param arr: List of comparable elements
+    :return: Sorted list
+    """
