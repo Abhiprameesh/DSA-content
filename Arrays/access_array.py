@@ -6,6 +6,7 @@ def accessElement(array, index):
         print('There is not any element in this index')
     else:
         print(array[index])
+        
 accessElement(arr1, 8)
 #accessing an array element with an index that is out of range will raise an IndexError. To avoid this, we can check if the index is within the valid range before accessing the element.
 #time complexity: O(1) because we are accessing a specific index directly without needing to traverse the array.
