@@ -13,3 +13,11 @@ print(newTwoDArray)
 #insert a new row at the start of the array
 newTwoDArray = np.insert(twoDarray, 1, [[1,2,3,4]], axis=0)
 print(newTwoDArray)
+
+#traversal of 2 dimensional array
+def traverse2DArray(twoDarray):
+    for i in range(len(twoDarray)):
+        for j in range(len(twoDarray[0])):
+            print(twoDarray[i][j], end=" ")
+            
+traverse2DArray(twoDarray)
