@@ -1,3 +1,5 @@
+#the below program will ask the user for the number of days, then ask for the high temperature for each day. It will then calculate the average temperature and display how many days were above average.
+#finds the days above average temperature
 numDays = int(input("Enter the number of days: "))
 total = 0
 temp = [] 
