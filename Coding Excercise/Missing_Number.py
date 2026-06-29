@@ -3,8 +3,8 @@ def missing_number(arr, n):
     total = n * (n + 1) // 2
     arr_sum = sum(arr)
     return total - arr_sum
-print("Enter the size of the array (n): ")
+print("Enter the upper limit (n) of the sequence 1 to n: ")
 n = int(input())
-print("Enter the elements of the array: ")
+print("Enter the elements of the array (space-separated): ")
 arr = list(map(int, input().split()))
 print("The missing number is:", missing_number(arr, n))
