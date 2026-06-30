@@ -7,4 +7,4 @@ def find_number(arr, target):
         if arr[i] == target:
             print(i)
 
-find_number(myarray, 21)
+find_number(myarray, 12)
