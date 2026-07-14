@@ -11,4 +11,4 @@ def permutation(list1, list2):
 list1 = [1, 2, 3]
 list2 = [3, 2, 1]
 result = permutation(list1, list2)
-print(result)  # Output: True
+print(result)  
