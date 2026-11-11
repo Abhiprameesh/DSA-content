@@ -1,6 +1,6 @@
-def find_max(arr, i):
+def max_array(arr, i):
     if i == len(arr) - 1:
         return arr[i]
-    return max(arr[i], find_max(arr, i+1))
+    return max(arr[i], max_array(arr, i + 1))
 arr = [1, 2, 3, 4, 5]
-print(find_max(arr, 0))
+print(max_array(arr, 0))
